@@ -21,7 +21,7 @@ def guardar_en_txt(texto:str, filename:str=FILE_NAME):
 
 def cargar_txt(filename:str=FILE_NAME):
     try:
-        with open(filename, "r+") as f:
+        with open(filename, "rt") as f:
             for linea in f.readlines():
                 st.text(linea)
     except FileNotFoundError:
