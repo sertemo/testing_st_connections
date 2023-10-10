@@ -15,15 +15,15 @@ def agregar_salto(numero:int=1):
                 """, unsafe_allow_html=True)
 
 def guardar_en_txt(texto:str, filename:str=FILE_NAME):
-    with open(filename, "+a") as f:
-        f.write(texto + "\n")
+    with open(filename, "ab") as f:
+        f.write(f"{texto}\n".encode("utf-8"))
     st.rerun()
 
 def cargar_txt(filename:str=FILE_NAME):
     try:
-        with open(filename, "rt") as f:
+        with open(filename, "rb") as f:
             for linea in f.readlines():
-                st.text(linea)
+                st.text(linea.decode("utf-8"))
     except FileNotFoundError:
         pass
 
