@@ -149,7 +149,6 @@ def main():
         texto_txt = st.text_input(
             "Escribe algo chuli",
             )
-        agregar_salto()
         escribir_txt = st.form_submit_button("Guardar txt")
         if escribir_txt and texto_txt:
             guardar_en_txt(texto_txt)
